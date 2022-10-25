@@ -1,0 +1,41 @@
+// Адаптивное свойство
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //   Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - 320px) /#{$maxWidthContainer - 320})
+      );
+    }
+  } @else if $type==2 {
+    //   Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} * ((100vw - 320px) /#{$maxwidth - 320})
+      );
+    }
+  } @else {
+    //   Всегда
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} * ((100vw - 320px) /#{$maxwidth - 320})
+    );
+  }
+}
+
+// Способ применения:
+
+/* div {
+  @include adaptiv-value("font-size", 20, 10, 0);
+} */
+
+/* 
+где: 
+"font-size" - свойство которое нужно адаптировать; 
+20 - исходный размер по макету;
+10 - минимальный размер, который будет адекватно работать на минимальных экранах;
+0 - режим один из трех (type==1 type==2 type==0)
+ */

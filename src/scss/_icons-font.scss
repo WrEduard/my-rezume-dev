@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons-font.ttf?jrsckx") format("truetype"),
+    url("../fonts/icons-font.woff?jrsckx") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon"],
+[class*=" _icon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  // speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-project-2:after {
+  content: "\e902";
+}
+._icon-project-1:after {
+  content: "\e90b";
+}
+._icon-education-2:after {
+  content: "\e90c";
+}
+._icon-about-me:after {
+  content: "\e900";
+}
+._icon-courses:after {
+  content: "\e901";
+}
+._icon-education:after {
+  content: "\e902";
+}
+._icon-email:before {
+  content: "\e903";
+}
+._icon-facebook:before {
+  content: "\e904";
+}
+._icon-linkedin:before {
+  content: "\e905";
+}
+._icon-location:before {
+  content: "\e906";
+}
+._icon-phone:before {
+  content: "\e907";
+}
+._icon-skype:before {
+  content: "\e908";
+}
+._icon-telegram:before {
+  content: "\e909";
+}
+._icon-work:after {
+  content: "\e90a";
+}

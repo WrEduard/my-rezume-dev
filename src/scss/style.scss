@@ -1,0 +1,79 @@
+/* =========== reset css =========== */
+@import "_reset-style";
+
+/* =========== variables =========== */
+@import "_variables";
+
+/* =========== adaptiv-value =========== */
+@import "_adaptiv-value";
+
+/* =========== icons-font =========== */
+@import "_icons-font";
+
+/* =========== left-sidebar =========== */
+@import "_left-sidebar";
+
+/* =========== main =========== */
+@import "_right-sidebar";
+
+/* =========== main =========== */
+html {
+  font-size: 18px;
+
+  @media screen and (max-width: 960px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 680px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 590px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 520px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 15px;
+  }
+  @media print {
+    font-size: 12px;
+    color: black !important;
+  }
+}
+body {
+  background-image: url("../img/bg.png");
+  background-repeat: repeat;
+  @include adaptiv-value("padding", 10, 5, 1);
+  font-size: 1rem;
+  font-family: $addFontFamily;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+  &:visited {
+    color: #fff;
+  }
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthContainer;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  height: 100vh;
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

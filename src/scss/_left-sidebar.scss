@@ -1,0 +1,92 @@
+.left-sidebar {
+  background-color: $mainColor;
+  color: #fff;
+  @include adaptiv-value("padding-left", 30, 10, 1);
+  @include adaptiv-value("padding-right", 30, 10, 1);
+
+  hr {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    @include adaptiv-value("margin-bottom", 30, 15, 1);
+    @include adaptiv-value("margin-top", 30, 15, 1);
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 640px) {
+    text-align: center;
+    li {
+      list-style: none !important;
+    }
+  }
+
+  @media print {
+    color: black !important;
+  }
+}
+.photo-left-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @include adaptiv-value("height", 350, 250, 1);
+  @include adaptiv-value("padding-bottom", 20, 10, 1);
+  @include adaptiv-value("padding-top", 20, 10, 1);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  // .photo-left-sidebar__img
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: rgb(236, 235, 235) 2px solid;
+  }
+}
+.contacts-left-sidebar {
+  // .contacts-left-sidebar__item
+  &__item {
+    @include adaptiv-value("margin-bottom", 10, 5, 1);
+    a {
+      &::before {
+        @include adaptiv-value("margin-right", 15, 8, 1);
+      }
+      &:hover {
+        text-decoration: underline;
+        &::before {
+          display: inline-block;
+          transition: all 0.1s linear;
+          transform: scale(1.4);
+          color: rgb(245, 241, 0);
+          font-weight: 900;
+        }
+      }
+      @media print {
+        font-size: 12px;
+        color: black !important;
+      }
+    }
+  }
+}
+.title-left-sidebar {
+  width: 100%;
+  background-color: rgb(32, 59, 110);
+  line-height: 2;
+  border-radius: 3px;
+  text-align: center;
+  font-family: "Lora";
+  font-weight: 900;
+  @include adaptiv-value("margin-bottom", 20, 10, 1);
+}
+
+.skills-left-sidebar {
+  // .skills-left-sidebar__item
+  &__item {
+    list-style: inside !important;
+  }
+}
